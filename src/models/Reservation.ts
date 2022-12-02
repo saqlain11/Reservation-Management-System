@@ -1,7 +1,7 @@
 type status = "CONFIRMED" | "NOT CONFIRMED" | "SEATED" | "CHECKED OUT";
 type area = "BAR" | "MAIN ROOM";
 type shift = "BREAKFAST" | "LUNCH" | "DINNER";
-interface Reservation {
+export default interface Reservation {
   id: number;
   businessDate: string;
   status: status;
@@ -17,4 +17,3 @@ interface Customer {
   firstName: string;
   lastName: string;
 }
-export default Reservation;
