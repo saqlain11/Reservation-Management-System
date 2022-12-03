@@ -1,22 +1,17 @@
-import { allReservation } from "state-management/actions";
-import useAppDispatch from "hooks/useAppDisptach";
-import { BrowserRouter as Router,Route,Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import NotFound from "templates/NotFound";
 import AllReservation from "templates/AllReservations";
+import React from "react";
 
-function App() {
-  const dispatch=useAppDispatch();
-  dispatch(allReservation());
+const App: React.FC = () => {
   return (
     <Router>
       <Routes>
-        <Route index element={<AllReservation/>}/>
-        <Route path="*" element={<NotFound/>}/>
+        <Route index element={<AllReservation />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
-
     </Router>
-    
   );
-}
+};
 
 export default App;

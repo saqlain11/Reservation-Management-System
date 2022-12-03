@@ -3,7 +3,7 @@ import { API_MESSAGES } from "helpers/constants";
 import { Reservation } from "models";
 
 const fetcher = async (options: AxiosRequestConfig): Promise<Reservation[]> => {
-  try {    
+  try {
     const response: AxiosResponse = await axios({ ...options });
     return response.data;
   } catch (error: unknown) {

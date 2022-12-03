@@ -27,17 +27,19 @@ class ErrorBoundary extends Component<Props, State> {
   public render() {
     if (this.state.hasError) {
       return (
-        <Space style={{height:"100vh",width:"100vw",justifyContent:"center"}}>
-        <Result
-          status="error"
-          title={UI_TEXT.SOMETHING_WENT_WRONG.TITLE}
-          subTitle={UI_TEXT.SOMETHING_WENT_WRONG.SUB_TITLE}
-          extra={
-            <Button type="primary" onClick={() => window.location.reload()}>
-              {UI_TEXT.SOMETHING_WENT_WRONG.BUTTON}
-            </Button>
-          }
-        />
+        <Space
+          style={{ height: "100vh", width: "100vw", justifyContent: "center" }}
+        >
+          <Result
+            status="error"
+            title={UI_TEXT.SOMETHING_WENT_WRONG.TITLE}
+            subTitle={UI_TEXT.SOMETHING_WENT_WRONG.SUB_TITLE}
+            extra={
+              <Button type="primary" onClick={() => window.location.reload()}>
+                {UI_TEXT.SOMETHING_WENT_WRONG.BUTTON}
+              </Button>
+            }
+          />
         </Space>
       );
     }

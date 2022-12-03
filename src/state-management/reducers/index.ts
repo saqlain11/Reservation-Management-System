@@ -1,1 +1,1 @@
-export {default as reservationReducer} from "./ReservationReducer";
+export { default as reservationReducer } from "./ReservationReducer";

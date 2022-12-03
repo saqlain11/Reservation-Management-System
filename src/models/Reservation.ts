@@ -6,8 +6,8 @@ export default interface Reservation {
   businessDate: string;
   status: status;
   shift: shift;
-  start: Date;
-  end: Date;
+  start: string;
+  end: string;
   quantity: number;
   area: area;
   customer: Customer;
