@@ -6,6 +6,11 @@ const UI_TEXT = {
     HEADER: {
       ADDITIONAL_FILTERS: "Additional Filters",
     },
+    CTA: {
+      FILTER: "Filter",
+      SEARCH: "Search",
+      RESET: "Reset",
+    },
   },
   PAGE_NOT_FOUND: {
     STATUS: "404",

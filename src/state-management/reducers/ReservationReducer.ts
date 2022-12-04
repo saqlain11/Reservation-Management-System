@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { dateFormatter, getUpcomingReservations } from "helpers/utils";
+import { getUpcomingReservations } from "helpers/utils";
 import { Reservation } from "models";
 import { allReservation } from "state-management/actions";
 

@@ -17,16 +17,21 @@ const ReservationFilter: React.FC = () => {
                   placeholder="Status"
                   options={[
                     {
-                      value: "jack",
-                      label: "Jack",
+                      value: "CONFIRMED",
+                      label: "Confirmed",
                     },
                     {
-                      value: "lucy",
-                      label: "Lucy",
+                      value: "NOT CONFIRMED",
+                      label: "Not Confirmed",
+                    },
+
+                    {
+                      value: "SEATED",
+                      label: "Seated",
                     },
                     {
-                      value: "Yiminghe",
-                      label: "yiminghe",
+                      value: "CHECKED OUT",
+                      label: "Checked out",
                     },
                   ]}
                 />
@@ -38,16 +43,16 @@ const ReservationFilter: React.FC = () => {
                   placeholder="Shift"
                   options={[
                     {
-                      value: "jack",
-                      label: "Jack",
+                      value: "BREAKFAST",
+                      label: "Breakfast",
                     },
                     {
-                      value: "lucy",
-                      label: "Lucy",
+                      value: "LUNCH",
+                      label: "Lunch",
                     },
                     {
-                      value: "Yiminghe",
-                      label: "yiminghe",
+                      value: "DINNER",
+                      label: "Dinner",
                     },
                   ]}
                 />
@@ -59,16 +64,12 @@ const ReservationFilter: React.FC = () => {
                   placeholder="Area"
                   options={[
                     {
-                      value: "jack",
-                      label: "Jack",
+                      value: "BAR",
+                      label: "Bar",
                     },
                     {
-                      value: "lucy",
-                      label: "Lucy",
-                    },
-                    {
-                      value: "Yiminghe",
-                      label: "yiminghe",
+                      value: "MAIN ROOM",
+                      label: "Main Room",
                     },
                   ]}
                 />
@@ -81,11 +82,13 @@ const ReservationFilter: React.FC = () => {
             </Col>
             <Col span={12} sm={12} xs={24}>
               <Button style={{ width: "100%" }} type="primary">
-                Filter
+                {UI_TEXT.ALL_RESERVATIONS.CTA.FILTER}
               </Button>
             </Col>
             <Col span={12} sm={12} xs={24}>
-              <Button style={{ width: "100%" }}>Clear</Button>
+              <Button style={{ width: "100%" }}>
+                {UI_TEXT.ALL_RESERVATIONS.CTA.RESET}
+              </Button>
             </Col>
           </Row>
         </Form>
