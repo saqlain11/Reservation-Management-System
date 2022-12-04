@@ -73,18 +73,35 @@ const ReservationFilter: React.FC<ReservationFilterProps> = ({
               sm={12}
               xs={24}
             >
-              <Button style={{ width: "49%" }} type="primary" htmlType="submit">
-                {UI_TEXT.ALL_RESERVATIONS.CTA.FILTER}
-              </Button>
-              <Button
-                style={{ width: "49%" }}
-                htmlType="button"
-                onClick={() => {
-                  clearFilter(form);
+              <Form.Item noStyle shouldUpdate>
+              {({ getFieldsValue }) => {
+                const {fullName,shift,status,date,area}=getFieldsValue();    
+                const isFormValidated =!!(fullName || shift|| status || date || area)                  
+                 return (
+                  <>
+                <Button
+                  style={{ width: "49%" }}
+                  type="primary"
+                  htmlType="submit"
+                  disabled={!isFormValidated}
+                >
+                  {UI_TEXT.ALL_RESERVATIONS.CTA.FILTER}
+                </Button>
+                 <Button
+                 style={{ width: "49%" }}
+                 htmlType="button"
+                 onClick={() => {
+                   clearFilter(form);
+                 }}
+                 disabled={!isFormValidated}
+               >
+                 {UI_TEXT.ALL_RESERVATIONS.CTA.RESET}
+               </Button>
+               </>
+                 );
                 }}
-              >
-                {UI_TEXT.ALL_RESERVATIONS.CTA.RESET}
-              </Button>
+              </Form.Item>
+             
             </Col>
           </Row>
         </Panel>
