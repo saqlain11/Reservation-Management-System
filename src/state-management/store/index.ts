@@ -5,5 +5,9 @@ const store = configureStore({
   reducer: {
     Reservation: reservationReducer,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
 });
 export default store;

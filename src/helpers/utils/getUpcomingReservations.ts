@@ -5,7 +5,11 @@ const getUpcommingReservations = (reservations: Reservation[]) => {
   const currentDate = new Date();
   return reservations
     .filter((reservation) => {
-      if (currentDate <= new Date(reservation.start)) return reservation;
+      if (
+        currentDate <= new Date(reservation.start) ||
+        currentDate <= new Date(reservation.end)
+      )
+        return reservation;
     })
     .map((reservation) => {
       reservation = {

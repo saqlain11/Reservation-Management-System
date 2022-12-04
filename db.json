@@ -110,8 +110,8 @@
       "businessDate": "04.12.2022",
       "status": "SEATED",
       "shift": "LUNCH",
-      "start": "2022-12-04T20:00:00Z",
-      "end": "2022-12-04T20:30:00Z",
+      "start": "2022-12-04T13:55:00Z",
+      "end": "2022-12-04T14:20:00Z",
       "quantity": 3,
       "customer": {
         "firstName": "Brennen",

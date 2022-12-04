@@ -1,6 +1,6 @@
-type status = "CONFIRMED" | "NOT CONFIRMED" | "SEATED" | "CHECKED OUT";
-type area = "BAR" | "MAIN ROOM";
-type shift = "BREAKFAST" | "LUNCH" | "DINNER";
+export type status = "CONFIRMED" | "NOT CONFIRMED" | "SEATED" | "CHECKED OUT";
+export type area = "BAR" | "MAIN ROOM";
+export type shift = "BREAKFAST" | "LUNCH" | "DINNER";
 export default interface Reservation {
   id: number;
   businessDate: string;

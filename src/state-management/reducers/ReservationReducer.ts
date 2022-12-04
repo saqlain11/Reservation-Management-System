@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { getUpcomingReservations } from "helpers/utils";
-import { Reservation } from "models";
+import { getFilterReservation, getUpcomingReservations } from "helpers/utils";
+import { FilterReservation, Reservation } from "models";
 import { allReservation } from "state-management/actions";
 
 interface ReservationState {
@@ -20,7 +20,24 @@ const initialReservationState: ReservationState = {
 const reservationReducer = createSlice({
   name: "Reservation",
   initialState: initialReservationState,
-  reducers: {},
+  reducers: {
+    applyReservationFilter: (
+      state: ReservationState,
+      { payload }: { payload: FilterReservation }
+    ) => {
+      state.filteredReservation = getFilterReservation(
+        state.reservations,
+        payload
+      );
+    },
+    clearReservsationFilter: (
+        state: ReservationState,
+      ) => {
+        state.filteredReservation = getUpcomingReservations(
+          state.reservations,
+        );
+      },
+  },
   extraReducers(builder) {
     builder.addCase(allReservation.pending, (state: ReservationState) => {
       state.isLoading = true;
@@ -43,4 +60,7 @@ const reservationReducer = createSlice({
     );
   },
 });
+const { applyReservationFilter,clearReservsationFilter } = reservationReducer.actions;
+export { applyReservationFilter ,clearReservsationFilter};
+
 export default reservationReducer.reducer;
