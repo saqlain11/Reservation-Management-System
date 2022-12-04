@@ -9,9 +9,9 @@ const getFilterReservation = (
     .filter((reservation) => {
       if (
         (filter.fullName &&
-          `${reservation.customer.firstName} ${reservation.customer.lastName}`.toLowerCase().includes(
-            filter.fullName.toLowerCase()
-          )) ||
+          `${reservation.customer.firstName} ${reservation.customer.lastName}`
+            .toLowerCase()
+            .includes(filter.fullName.toLowerCase())) ||
         filter.status === reservation.status ||
         filter.area === reservation.area ||
         filter.shift === reservation.shift ||

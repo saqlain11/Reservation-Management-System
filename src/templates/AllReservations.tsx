@@ -10,7 +10,10 @@ import {
 } from "components";
 import { UI_TEXT } from "helpers/constants";
 import { FilterReservation } from "models";
-import { applyReservationFilter, clearReservsationFilter } from "state-management/reducers";
+import {
+  applyReservationFilter,
+  clearReservsationFilter,
+} from "state-management/reducers";
 const AllReservation: React.FC = () => {
   const { Title } = Typography;
 

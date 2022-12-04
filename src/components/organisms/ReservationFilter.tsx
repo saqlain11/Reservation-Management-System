@@ -9,7 +9,7 @@ import {
   Input,
   FormInstance,
 } from "antd";
-import { UI_TEXT } from "helpers/constants";
+import { AREA, SHIFT, STATUS, UI_TEXT } from "helpers/constants";
 import { FilterReservation } from "models";
 interface ReservationFilterProps {
   onReservationFilter: (data: FilterReservation) => void;
@@ -40,76 +40,27 @@ const ReservationFilter: React.FC<ReservationFilterProps> = ({
                 name="fullName"
                 shouldUpdate={true}
               >
-                <Input placeholder="Name & Surname" maxLength={50} />
+                <Input placeholder="Name & Surname" maxLength={50} allowClear />
               </Form.Item>
             </Col>
             <Col span={12} sm={12} xs={24}>
               <Form.Item label="Status" name="status">
-                <Select
-                  placeholder="Status"
-                  options={[
-                    {
-                      value: "CONFIRMED",
-                      label: "Confirmed",
-                    },
-                    {
-                      value: "NOT CONFIRMED",
-                      label: "Not Confirmed",
-                    },
-
-                    {
-                      value: "SEATED",
-                      label: "Seated",
-                    },
-                    {
-                      value: "CHECKED OUT",
-                      label: "Checked out",
-                    },
-                  ]}
-                />
+                <Select placeholder="Status" options={STATUS} allowClear />
               </Form.Item>
             </Col>
             <Col span={12} sm={12} xs={24}>
               <Form.Item label="Shift" name="shift">
-                <Select
-                  placeholder="Shift"
-                  options={[
-                    {
-                      value: "BREAKFAST",
-                      label: "Breakfast",
-                    },
-                    {
-                      value: "LUNCH",
-                      label: "Lunch",
-                    },
-                    {
-                      value: "DINNER",
-                      label: "Dinner",
-                    },
-                  ]}
-                />
+                <Select placeholder="Shift" options={SHIFT} allowClear />
               </Form.Item>
             </Col>
             <Col span={12} sm={12} xs={24}>
               <Form.Item label="Area" name="area">
-                <Select
-                  placeholder="Area"
-                  options={[
-                    {
-                      value: "BAR",
-                      label: "Bar",
-                    },
-                    {
-                      value: "MAIN ROOM",
-                      label: "Main Room",
-                    },
-                  ]}
-                />
+                <Select placeholder="Area" options={AREA} allowClear />
               </Form.Item>
             </Col>
             <Col span={12} sm={12} xs={24}>
               <Form.Item label="Date" name="date">
-                <DatePicker style={{ width: "100%" }} />
+                <DatePicker style={{ width: "100%" }} allowClear />
               </Form.Item>
             </Col>
             <Col

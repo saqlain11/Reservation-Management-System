@@ -1,4 +1,5 @@
 export {
   default as reservationReducer,
-  applyReservationFilter,clearReservsationFilter
+  applyReservationFilter,
+  clearReservsationFilter,
 } from "./ReservationReducer";

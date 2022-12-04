@@ -30,13 +30,9 @@ const reservationReducer = createSlice({
         payload
       );
     },
-    clearReservsationFilter: (
-        state: ReservationState,
-      ) => {
-        state.filteredReservation = getUpcomingReservations(
-          state.reservations,
-        );
-      },
+    clearReservsationFilter: (state: ReservationState) => {
+      state.filteredReservation = getUpcomingReservations(state.reservations);
+    },
   },
   extraReducers(builder) {
     builder.addCase(allReservation.pending, (state: ReservationState) => {
@@ -60,7 +56,8 @@ const reservationReducer = createSlice({
     );
   },
 });
-const { applyReservationFilter,clearReservsationFilter } = reservationReducer.actions;
-export { applyReservationFilter ,clearReservsationFilter};
+const { applyReservationFilter, clearReservsationFilter } =
+  reservationReducer.actions;
+export { applyReservationFilter, clearReservsationFilter };
 
 export default reservationReducer.reducer;
