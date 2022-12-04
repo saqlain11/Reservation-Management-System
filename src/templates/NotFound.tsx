@@ -7,7 +7,12 @@ const NotFound: React.FC = () => {
   const navigate = useNavigate();
   return (
     <Space
-      style={{ width: "100vw", height: "100vh", justifyContent: "center" }}
+      style={{
+        //TODO: To add that in common styling
+        width: "100vw",
+        height: "100vh",
+        justifyContent: "center",
+      }}
     >
       <Result
         status="404"

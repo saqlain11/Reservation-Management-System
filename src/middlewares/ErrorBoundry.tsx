@@ -28,7 +28,12 @@ class ErrorBoundary extends Component<Props, State> {
     if (this.state.hasError) {
       return (
         <Space
-          style={{ height: "100vh", width: "100vw", justifyContent: "center" }}
+          style={{
+            //TODO: To add that in common styling
+            height: "100vh",
+            width: "100vw",
+            justifyContent: "center",
+          }}
         >
           <Result
             status="error"

@@ -36,7 +36,13 @@ const AllReservation: React.FC = () => {
   };
 
   return (
-    <Layout style={{ height: "100vh", padding: 10 }}>
+    <Layout
+      style={{
+        //TODO: To add that in common styling
+        height: "100vh",
+        padding: 10,
+      }}
+    >
       <Title level={2}>{UI_TEXT.COMMON.ALL_RESERVATIONS}</Title>
       <ReservationFilter
         onReservationFilter={onReservationFilter}

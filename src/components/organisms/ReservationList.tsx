@@ -7,6 +7,7 @@ import { Reservation } from "models";
 import { SearchOutlined } from "@ant-design/icons";
 import type { FilterConfirmProps } from "antd/es/table/interface";
 import { UI_TEXT } from "helpers/constants";
+import { color } from "theme";
 
 const ReservationList: React.FC = () => {
   const { filteredReservation, isLoading } = useAppSelector(
@@ -65,7 +66,9 @@ const ReservationList: React.FC = () => {
     ),
     filterIcon: (filtered: boolean) => {
       return (
-        <SearchOutlined style={{ color: filtered ? "#1890ff" : undefined }} />
+        <SearchOutlined
+          style={{ color: filtered ? color.ICON.BLUE : undefined }}
+        />
       );
     },
     onFilter: (value, record) => {
