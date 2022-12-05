@@ -2,8 +2,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import React, { lazy, Suspense } from "react";
 import { Layout, Spin } from "antd";
 
-const AllReservation = React.lazy(() => import("templates/AllReservations"));
-const NotFound = React.lazy(() => import("templates/NotFound"));
+const AllReservation = lazy(() => import("templates/AllReservations"));
+const NotFound = lazy(() => import("templates/NotFound"));
 
 const App: React.FC = () => {
   return (

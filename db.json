@@ -20,8 +20,8 @@
       "businessDate": "5.12.2022",
       "status": "NOT CONFIRMED",
       "shift": "BREAKFAST",
-      "start": "2022-12-05T08:00:00Z",
-      "end": "2022-12-05T09:00:00Z",
+      "start": "2022-12-06T08:00:00Z",
+      "end": "2022-12-06T09:00:00Z",
       "quantity": 2,
       "customer": {
         "firstName": "Arvie",

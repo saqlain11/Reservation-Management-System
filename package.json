@@ -13,22 +13,26 @@
     "@types/react-dom": "^18.0.9",
     "antd": "^5.0.3",
     "axios": "^1.2.0",
+    "concurrently": "^7.6.0",
     "json-server": "^0.17.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.4.4",
     "react-scripts": "5.0.1",
+    "ts-jest": "^29.0.3",
     "typescript": "*",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "concurrently \"npm run client\" \"npm run server\"",
+    "client": "react-scripts start",
+    "server": "json-server --watch db.json --port 1996",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "format": "prettier -c -w .",
-    "server": "json-server --watch db.json --port 1996"
+    "coverage": "npm test -- --coverage"
   },
   "eslintConfig": {
     "extends": [
@@ -57,6 +61,14 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.31.11",
     "prettier": "^2.8.0"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.(ts|tsx|js)$": "ts-jest"
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!axios)"
+    ]
   },
   "main": "index.js",
   "repository": "https://github.com/saqlain11/Reservation-Management-System.git",

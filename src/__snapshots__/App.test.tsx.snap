@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main entry point suite should render correctly 1`] = `
+<DocumentFragment>
+  <section
+    class="ant-layout css-dev-only-do-not-override-1s3dcof"
+    style="justify-content: center; align-self: center; width: 100vw; height: 100vh;"
+  >
+    <div
+      aria-busy="true"
+      aria-live="polite"
+      class="ant-spin ant-spin-lg ant-spin-spinning ant-spin-show-text css-dev-only-do-not-override-1s3dcof"
+    >
+      <span
+        class="ant-spin-dot ant-spin-dot-spin"
+      >
+        <i
+          class="ant-spin-dot-item"
+        />
+        <i
+          class="ant-spin-dot-item"
+        />
+        <i
+          class="ant-spin-dot-item"
+        />
+        <i
+          class="ant-spin-dot-item"
+        />
+      </span>
+      <div
+        class="ant-spin-text"
+      >
+        Loading...
+      </div>
+    </div>
+  </section>
+</DocumentFragment>
+`;
