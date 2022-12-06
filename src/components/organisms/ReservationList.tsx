@@ -13,6 +13,7 @@ const ReservationList: React.FC = () => {
   const { filteredReservation, isLoading } = useAppSelector(
     (state) => state.Reservation
   );
+
   const searchInput = useRef<InputRef>(null);
 
   const handleSearch = (confirm: (param?: FilterConfirmProps) => void) => {

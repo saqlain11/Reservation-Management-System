@@ -1,4 +1,5 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
+import { API_MESSAGES } from "helpers/constants";
 import { fetcher } from "helpers/utils";
 import { Reservation } from "models";
 
@@ -10,7 +11,7 @@ const allReservation = createAsyncThunk(
       const data: Reservation[] = await fetcher({ url });
       return data;
     } catch (error: unknown) {
-      return rejectWithValue("internal server Error");
+      return rejectWithValue(API_MESSAGES.INTERNAL_SERVER_ERROR);
     }
   }
 );

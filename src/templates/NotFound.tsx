@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 const NotFound: React.FC = () => {
   const navigate = useNavigate();
+
   return (
     <Space
       style={{
@@ -20,6 +21,7 @@ const NotFound: React.FC = () => {
         subTitle={UI_TEXT.PAGE_NOT_FOUND.SUBTITLE}
         extra={
           <Button
+            data-testid="backPage"
             type="primary"
             onClick={() => {
               navigate(-1);
