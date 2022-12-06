@@ -20,6 +20,6 @@ describe("Reservation Action Suite", () => {
     const dispatch = jest.fn();
     const thunk = allReservation();
     await thunk(dispatch, undefined, undefined);
-    expect(dispatch).toHaveBeenCalledTimes(2); //two times because 1 is for pending and second for fullfiled
+    expect(dispatch).toHaveBeenCalledTimes(2); //two times because 1 is for pending and second for rejected
   });
 });
