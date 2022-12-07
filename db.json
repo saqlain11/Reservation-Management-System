@@ -108,7 +108,7 @@
     {
       "id": 8,
       "businessDate": "04.12.2023",
-      "status": "SEATED",
+      "status": "CONFIRMED",
       "shift": "LUNCH",
       "start": "2023-12-04T13:55:00Z",
       "end": "2023-12-04T14:20:00Z",

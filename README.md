@@ -1,46 +1,156 @@
-# Getting Started with Create React App
+# Reservation Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In this system staff can see the upcoming reservation of users along with shift, status, no of seats, reservation start & end time also filter out the reservation by applying filters such as user name and surname, by reserved date, by reserved area, by reserved shift, by reservation status
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- List of upcoming reservations
+- Filter reservations by date / status / shift / area / user
+- Sort reservations (Ascending, descending)
+- Search by user name from upcoming reservation
 
-### `npm start`
+## Folder Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```.
+├── __fixtures__
+│   └── all-reservation-response.ts
+├── __snapshots__
+│   └── App.test.tsx.snap
+├── components
+│   ├── organisms
+│   │   ├── index.ts
+│   │   ├── ReservationFilter.tsx
+│   │   └── ReservationList.tsx
+│   └── index.ts
+├── helpers
+│   ├── constants
+│   │   ├── api-messages.ts
+│   │   ├── index.ts
+│   │   ├── lists.ts
+│   │   └── ui-text.ts
+│   └── utils
+│       ├── dateFormatter.ts
+│       ├── fetcher.test.ts
+│       ├── fetcher.ts
+│       ├── getFilterReservations.test.ts
+│       ├── getFilterReservations.ts
+│       ├── getUpcomingReservations.test.ts
+│       ├── getUpcomingReservations.ts
+│       └── index.ts
+├── hooks
+│   ├── index.ts
+│   ├── useAppDisptach.ts
+│   └── useAppSelector.ts
+├── middlewares
+│   ├── ErrorBoundry.tsx
+│   └── index.ts
+├── models
+│   ├── FilterReservation.ts
+│   ├── index.ts
+│   └── Reservation.ts
+├── state-management
+│   ├── actions
+│   │   ├── index.ts
+│   │   ├── ReservationAction.test.ts
+│   │   └── ReservationAction.ts
+│   ├── reducers
+│   │   ├── index.ts
+│   │   └── ReservationReducer.ts
+│   ├── store
+│   │   └── index.ts
+│   └── index.ts
+├── templates
+│   ├── __snapshots__
+│   │   ├── AllReservations.test.tsx.snap
+│   │   └── NotFound.test.tsx.snap
+│   ├── AllReservations.test.tsx
+│   ├── AllReservations.tsx
+│   ├── index.ts
+│   ├── NotFound.test.tsx
+│   └── NotFound.tsx
+├── theme
+│   ├── color.ts
+│   └── index.ts
+├── App.css
+├── App.test.tsx
+├── App.tsx
+├── index.css
+├── index.tsx
+├── logo.svg
+├── react-app-env.d.ts
+├── reportWebVitals.ts
+└── setupTests.ts
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Installation
 
-### `npm test`
+Install Reservation-Management-System with npm
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+  nvm use (to set version, avoid from incompatibility of peer dependencies)
+  npm install
+```
+## Start project
 
-### `npm run build`
+To start the project, run the following command
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+  npm start
+```
+This command will up client and server concurrently.
+run server on `localhost:1996` & run client on `localhost:3000`.
+## Format & linting of code
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To format & lint, run the following command
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+  npm run format (this command will prettify you code)
+  npm run lint (this will find lint error in your code)
+```
 
-### `npm run eject`
+## Test cases & code coverage
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+To run test cases and code coverge, run the following command
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+  npm run test (for all test to run)
+  npm run test RelativePath/to/testfile (for specific test file to run)
+  npm run coverage (to get the commulative report of code coverage also can see code coverage UI by open the index.html file from coverage folder)
+```
+## API Reference
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### Reservation Schema
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+| Parameter     | Type       | Description                      |
+| :------------ | :--------- | :------------------------------- |
+| `id`          | `int`      | **Required**. Reservation id     |
+| `businessDate`| `string`   | **Required**. Reservation Date   |
+| `status`      | `string`   | **Required**. Reservation Status |
+| `shift`       | `string`   | **Required**. Reservation Shift  |
+| `start`       | `string`   | **Required**. Reservation Start  |
+| `end`         | `string`   | **Required**. Reservation End    |
+| `quantity`    | `int`      | **Required**. Reservation Seats  |
+| `customer`    | `object`   | **Required**. Customer           |
+| `firstName`   | `string`   | **Required**. Customer First Name|
+| `lastName`    | `string`   | **Required**. Customer Last Name |
+| `area`        | `string`   | **Required**. Reservation Area   |
+| `guestNotes`  | `string`   | **Required**. Customer Feedback  |
 
-## Learn More
+#### Get Tasks
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```http
+  GET /reservations
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To get all reservations.
+## Approach 
+[Main steps followed to build that project](./src/APPROACH.md)
+## Tech Stack
+
+**Client:** `React`, `Redux`, `Thunk`, `Antd UI`, `Jest with RTL`
+
+**Server:** `Json-Server`
+
+## Authors
+
+- [@saqlain](https://www.github.com/saqlain11)
